@@ -1,11 +1,4 @@
 export default function capitalizeAndFilter(array) {
-  for(let i = 0; i < array.length; i++) {
-    array[i] = array[i][0].toUpperCase() + array[i].substr(1);
-  }
-  for(let i = 0; i < array.length; i++) {
-    if(array[i][0] === 'F') {
-      array.splice(i, 1);
-    }
-  }
-  return array;
+  const newArray = array.filter(string => (string[0].toUpperCase() !== 'F'));
+  return newArray.map(string => string[0].toUpperCase() + string.substring(1));
 }
