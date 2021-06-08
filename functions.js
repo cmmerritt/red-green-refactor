@@ -1,5 +1,5 @@
-export default function myName(obj) {
-  const { name } = obj;
+export default function myName({ name }) {
   return name;
 }
+
 
