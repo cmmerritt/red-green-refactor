@@ -25,3 +25,11 @@ describe('returns new array', () => {
     expect(arrayActual).toEqual(arrayExpected);
   });
 });
+
+describe('returns original array unchanged', () => {
+  it('make sure original array is unchanged', () => {
+    const originalArrayExpected = [1, 2, 3];
+    const originalArrayActual = numbers;
+    expect(originalArrayActual).toEqual(originalArrayExpected);
+  });
+});
