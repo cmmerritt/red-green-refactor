@@ -1,6 +1,7 @@
 import getName from './name-function';
 import copyAndPush from './copy-push-function';
 import capitalizeAndFilter from './capitalize-filter-function';
+import fetchQuotes from './fetch-quotes';
 
 const spot = { name: 'spot', age: 5, weight: '20 lbs' };
 const character = { _id: '5cf5679a915ecad153ab68c9', name: 'Aang' };
@@ -41,5 +42,17 @@ describe('capitalizes all strings and filters out F/f', () => {
     const arrayExpected = ['Tee', 'Tie', 'To', 'Tum'];
     const arrayActual = capitalizeAndFilter(stringArray);
     expect(arrayActual).toEqual(arrayExpected);
+  });
+});
+
+describe('fetches quotes', () => {
+  it('returns futurama object with name, text, image', async () => {
+    const objExpected = {
+      name: expect.any(String),
+      text: expect.any(String),
+      image: expect.any(String)
+    };
+    const objActual = await fetchQuotes();
+    expect(objActual).toEqual(objExpected);
   });
 });
